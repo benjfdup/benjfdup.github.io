@@ -4,48 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben du Pont | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <nav class="bg-blue-600 p-4 text-white">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold">Ben du Pont</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#home" class="hover:underline">Home</a></li>
-                <li><a href="#projects" class="hover:underline">Projects</a></li>
-                <li><a href="#blog" class="hover:underline">Blog</a></li>
-                <li><a href="#cv" class="hover:underline">CV</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <section id="home" class="container mx-auto p-8 text-center">
-        <h2 class="text-3xl font-bold">Welcome to My Portfolio</h2>
-        <p class="mt-4">I am a physicist and computational scientist working on generative modeling for peptide design.</p>
-    </section>
-    
-    <section id="projects" class="container mx-auto p-8">
-        <h2 class="text-2xl font-bold">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            <div class="bg-white p-4 rounded shadow">
-                <h3 class="text-lg font-bold">PyClops</h3>
-                <p>A flow matching model for cyclic peptide modeling.</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-                <h3 class="text-lg font-bold">Wolf & Serpent Rite</h3>
-                <p>A deeply symbolic, mystical, and secular ritual literature.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="blog" class="container mx-auto p-8">
-        <h2 class="text-2xl font-bold">Blog</h2>
-        <p>Coming soon...</p>
-    </section>
-    
-    <section id="cv" class="container mx-auto p-8">
-        <h2 class="text-2xl font-bold">Curriculum Vitae</h2>
-        <p><a href="cv.pdf" class="text-blue-600 underline">Download my CV</a></p>
-    </section>
+<body>
+    <header>
+        <h1>Ben du Pont</h1>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="cv.html">CV</a>
+        </nav>
+    </header>
 </body>
 </html>
