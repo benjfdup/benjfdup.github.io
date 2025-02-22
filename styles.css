@@ -1,3 +1,11 @@
+/* Apply sans-serif font to the entire website */
+body {
+    font-family: Arial, sans-serif; /* You can also use 'Helvetica', 'Segoe UI', or other sans-serif fonts */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
