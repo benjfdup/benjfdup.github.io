@@ -34,3 +34,32 @@ h1 {
 .nav-links a:hover {
     text-decoration: underline;
 }
+
+.padded-standard {
+    padding-top: 3px;     /* Top padding */
+    padding-right: 20px;   /* Right padding */
+    padding-bottom: 3px;  /* Bottom padding */
+    padding-left: 20px;    /* Left padding */
+}
+
+.padded-pdf {
+    padding-top: 3px;
+    padding-right: 0px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+
+    display: flex;       /* Flexbox to center */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (optional) */
+    text-align: center;
+}
+
+.padded-pdf iframe, 
+.padded-pdf embed {
+    display: block;
+    width: 60%;  /* Adjust width as needed */
+    max-width: 600px; /* Prevent it from getting too wide */
+    height: 600px; /* Adjust height */
+    border: none;
+}
+
