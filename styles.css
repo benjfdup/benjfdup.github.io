@@ -98,7 +98,7 @@ footer * {
 
 .headshot {
     float: left;  /* Positions image on the left */
-    width: 150px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
     height: auto; /* Maintains aspect ratio */
     border-radius: 10px; /* Optional: Adds rounded corners */
     margin-right: 15px; /* Adds spacing between image and text */
