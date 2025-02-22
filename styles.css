@@ -96,5 +96,11 @@ footer * {
     box-shadow: none;
 }
 
-
-
+.headshot {
+    float: left;  /* Positions image on the left */
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-right: 15px; /* Adds spacing between image and text */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds subtle shadow */
+}
