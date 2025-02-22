@@ -15,11 +15,8 @@
         <h2>Ben's Blog</h2>
         <p>This is my blog.</p>
     </main>
-    
-    <script>
-        fetch("navbar.html")
-            .then(response => response.text())
-            .then(data => document.getElementById("navbar").innerHTML = data);
-    </script>
+
+    <footer id="footer"></footer>  <!-- Footer will be inserted here -->
+    <script src="scripts.js"></script>  <!-- Load the script at the bottom for best performance -->
 </body>
 </html>

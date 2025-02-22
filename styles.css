@@ -63,3 +63,38 @@ h1 {
     border: none;
 }
 
+/* Ensure the entire page fills at least the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the main content grows to push the footer down */
+main {
+    flex: 1; /* This expands to fill the available space */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #ffffff; /* Adjust color as needed */
+    text-align: center;
+    padding: 10px 0; /* Add vertical padding but prevent extra space */
+    margin: 0; /* Remove any default margin */
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    border-top: none; /* Ensures no extra border appears */
+}
+
+/* Remove any unwanted default styles applied by browsers */
+footer * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+
+
