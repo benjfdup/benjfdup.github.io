@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Ben du Pont</title>
+    <title>Ben du Pont | About</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Ben du Pont</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="blog.html">Blog</a>
-            <a href="cv.html">CV</a>
-        </nav>
+        <div id="navbar"></div>
     </header>
+    
     <main>
         <h2>About Me</h2>
-        <p>Welcome to the about page!</p>
+        <p>Hi! I am Ben.</p>
     </main>
+    
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+    </script>
 </body>
 </html>
