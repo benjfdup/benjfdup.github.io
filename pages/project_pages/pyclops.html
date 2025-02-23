@@ -43,7 +43,7 @@
             samples from the data distribution, which is typically non-trivial to directly sample from (e.g. images, protein 
             conformations, <a href="https://doi.org/10.48550/arXiv.2305.14671">natural language</a>). 
             This has a critical advantage over conventional diffusion-based ML: simulation-free training. Diffusion models are 
-            typically trained by successively learning to "denoise" the data under increasing regimes of uncertainty.
+            typically trained by successively learning to "denoise" the data under regimes of increasing uncertainty.
             Consequently, these models must be run repeatedly during training to arrive at the best-estimate denoised state 
             (which is necessary to evaluate the model's performance). However, regressing on some vector field which maps from 
             noise to a batch of data does not require that the model be evaluated during training, saving significant 
@@ -58,11 +58,18 @@
             atoms in the molecule in a manner that is consistant with physical invariances and equivariances (rotational & translational
             symmetries, reflectional invariance). As such, language models can be considered a special case of such graph neural networks,
             as they too learn long range interactions between discrete units (i.e. words, letters or tokens), but that is a topic for
-            another day.
+            another day. A significant limitation of such EGNNs is that their complexity can scale poorly with respect to system size.
+            <a href="#bib">Klein & Noé</a> note, for instance, that for systems beyond dipeptides, training times became increasingly long.
+            This is partially because they used an all connected graph, meaning that every atoms interactions with every other atom had
+            to be learned. Yet, their work provides a hopeful foundation for my efforts; if we assume that there exists a 
+            flow matching neural network which can sample from a peptide's conformational Boltzmann distribution, then one may simply
+            "condition" that sampling process by requiring that generated samples are approximately cyclic. In so doing, one would
+            by consequence arrive at means of cyclization that least perturbs the existing Boltzmann distribution, as such samples should
+            still be drawn from the support of said distribution.
         </p>
 
         <p>
-            Transition into conditioned flow matching
+            But how does one actually accomplish this? Transition into conditioned flow matching
         </p>
 
         <p>
