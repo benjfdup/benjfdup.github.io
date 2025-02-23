@@ -5,24 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben du Pont | Peptide Cyclization</title>
     <link rel="stylesheet" href="../../styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
 </head>
 <body>
     <header>
         <div id="navbar"></div>
     </header>
+    <bibtex src="pyclops.bib"></bibtex>
     
     <main class ="padded-standard">
         <h2>A Boltzmann Informed Model for Designing Cyclic Peptides via Diverse Chemistries (MPhil Project)</h2>
         <p>
             The goal of this project is to use a machine learning model, which can sample from a peptide's conformational 
-            Boltzmann distribution, to suggest the best ways to then cyclize that peptide via at run time conditioning.
+            Boltzmann distribution, to suggest the best ways to cyclize that peptide via at-runtime conditioning.
         </p>
 
         <p>
-            Let's take a step back. Why do we care about peptide cyclization to begin with?
+            But why do we care about peptide cyclization? Peptide therapeutics conventionally struggle with 
+            decomposition by endogenous proteases, limiting their medical efficacy <a href="#bib">(Werner et al.)</a>. Macrocyclic 
+            (or just "cyclic") peptides have their ends bound, or have their sidechains stapled, such that their amino acid chain
+            forms a large loop. Head-to-tail (N-C terminus) cyclization can make these peptides resistant to said proteases,
+            and forcing the chain into a loop similarly limits the total number of possible peptide conformations, making folding
+            more entropically favorable; these properties decrease drug digestability and increase drug receptor binding 
+            affinity, respectively <a href="#bib">(Craik)</a>. Therefore cyclic peptides are of great therapeutic relevance.
         </p>
-    </main>
 
+        <p>
+            Yet, there are many possible peptide cyclizations to choose from, and any efforts to cyclize these peptides should be
+            based on an understanding of how that will modify the amino-acid chain's natural distribution of conformations 
+            (its "conformational Boltzmann distribution"), as this may impact its efficacy.
+            Sampling from a protein's Boltzmann distribution, rather than only predicting its most probable
+            fold (like <a href="https://doi.org/10.1038/s41586-024-07487-w">AlphaFold</a>), 
+            is non-trivial. <a href="#bib">(Klein & Noé)</a>. This is where flow matching comes in. A generalization of conventional 
+            diffusion models, flow matching is a recently developed paradigm that enables a machine learning (ML) model to regress on a 
+            vector field that maps from an easy-to-sample-from prior to any arbitrary distribution; one is usually interested in 
+            generating more 
+            samples from the data distribution, which is typically non-trivial to directly sample from (e.g. images, protein 
+            conformations, <a href="https://doi.org/10.48550/arXiv.2305.14671">natural language</a>). 
+            This has a critical advantage over conventional diffusion-based ML: simulation-free training. Diffusion models are 
+            typically trained by successively learning to "denoise" the data under increasing regimes of uncertainty.
+            Consequently, these models must be run repeatedly during training to arrive at the best-estimate denoised state 
+            (which is necessary to evaluate the model's performance). However, regressing on some vector field which maps from 
+            noise to a batch of data does not require that the model be evaluated during training, saving significant 
+            computational resources. This is what's termed "flow matching" <a href="#bib">(Lipman et al.)</a>.
+        </p>
+
+        <p>
+            Flow matching neural networks can accurately capture the Boltzmann distribution of dipeptides. 
+            One such network is the Transferable Boltzmann Generator of <a href="#bib">Klein & Noé</a>, which can even generalize 
+            to peptides unseen in training (hence "transferable").
+        </p>
+
+        <p>
+            Transition into conditioned flow matching
+        </p>
+
+        <p>
+            Discuss means of conditioning
+        </p>
+
+        <p>
+            Discuss initial positive results + work that still needs to be done.
+        </p>
+
+        <h2 id="bib">Bibliography</h2>
+        <div id="bibtex_display"></div>
+        
+    </main>
     <footer id="footer"></footer>  <!-- Footer will be inserted here -->
     <script src="scripts.js"></script>  <!-- Load the script at the bottom for best performance -->
 </body>
