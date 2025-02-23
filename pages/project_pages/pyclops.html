@@ -52,8 +52,13 @@
 
         <p>
             Flow matching neural networks can accurately capture the Boltzmann distribution of dipeptides. 
-            One such network is the Transferable Boltzmann Generator of <a href="#bib">Klein & Noé</a>, which can even generalize 
-            to peptides unseen in training (hence "transferable").
+            One such network is the transferable boltzmann generator (TBG) of <a href="#bib">Klein & Noé</a>, which can even 
+            generalize to peptides unseen in training (hence "transferable"). This uses an equivariant graph neural network (EGNN) to make
+            its predictions, which is a network architecture that easily enables learned information about one atom to affect other
+            atoms in the molecule in a manner that is consistant with physical invariances and equivariances (rotational & translational
+            symmetries, reflectional invariance). As such, language models can be considered a special case of such graph neural networks,
+            as they too learn long range interactions between discrete units (i.e. words, letters or tokens), but that is a topic for
+            another day.
         </p>
 
         <p>
